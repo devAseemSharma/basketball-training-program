@@ -2,478 +2,1538 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Basketball Conditioning &amp; Skills Program</title>
-    <!-- Import a modern font for a sleek look -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Basketball Training Program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Base styles for a dark, neon‑accented design inspired by modern fitness websites */
         :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #111111;
-            --nav-bg: #141414;
-            --primary-color: #00ff80;
-            --secondary-color: #00dd88;
-            --text-color: #e0e0e0;
-            --border-radius: 8px;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            background: var(--bg-color);
-            color: var(--text-color);
-        }
-        header {
-            background: #101010;
-            color: var(--primary-color);
-            padding: 40px 0;
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: 700;
-        }
-        nav {
-            background: var(--nav-bg);
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            border-bottom: 2px solid var(--primary-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            flex: 1 0 auto;
-            padding: 15px 20px;
-            text-align: center;
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s, background 0.3s;
-        }
-        nav a:hover {
-            color: var(--primary-color);
-            background: #1f1f1f;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: 0 0 15px rgba(0,0,0,0.6);
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-            margin-top: 0;
-            font-size: 1.6em;
-        }
-        h3 {
-            color: var(--secondary-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        ul, ol {
-            margin-left: 20px;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        /* Day cards for weekly schedule */
-        details.day {
-            background: #1a1a1a;
-            border: 1px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            margin-bottom: 15px;
-            padding: 10px;
-        }
-        details.day summary {
-            cursor: pointer;
-            list-style: none;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        details.day summary::-webkit-details-marker {
-            display: none;
-        }
-        details.day[open] summary {
-            color: var(--secondary-color);
-        }
-        .exercise-item {
-            margin-bottom: 8px;
-        }
-        .exercise-item a {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-        /* Resource cards */
-        .resources {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .resource-card {
-            background: #1a1a1a;
-            border: 1px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            color: var(--text-color);
-        }
-        .resource-card h4 {
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-        .resource-card p {
-            font-size: 0.9em;
-        }
-        .resource-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .resource-card a:hover {
-            text-decoration: underline;
+            --primary: #00ff88;
+            --primary-dark: #00cc6a;
+            --secondary: #6366f1;
+            --accent: #fbbf24;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --border: #374151;
+            --border-light: #4b5563;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
-        /* UX enhancements */
-        /* Smooth scrolling for anchor links */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%2300ff88" opacity="0.1"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--bg-primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards & Content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-size: 1.25rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .card-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Collapsible Sections */
+        .collapsible {
+            margin-bottom: 1rem;
+        }
+
+        .collapsible-header {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            border-color: var(--primary);
+            background: var(--bg-card);
+        }
+
+        .collapsible-header.active {
+            border-color: var(--primary);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .collapsible-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .collapsible-icon {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--bg-card);
+            border: 1px solid var(--primary);
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .collapsible-content.active {
+            max-height: 1000px;
+        }
+
+        .collapsible-inner {
+            padding: 2rem;
+        }
+
+        /* Exercise Lists */
+        .exercise-list {
+            list-style: none;
+            space-y: 1rem;
+        }
+
+        .exercise-item {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.2s ease;
+        }
+
+        .exercise-item:hover {
+            transform: translateX(4px);
+        }
+
+        .exercise-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .exercise-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .exercise-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .exercise-link:hover {
+            color: var(--primary);
+        }
+
+        /* Weekly Schedule */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .day-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--bg-primary);
+            padding: 1.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .day-content {
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .day-content.active {
+            display: block;
+        }
+
+        /* Link Preview Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .resource-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .resource-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: var(--bg-card);
+        }
+
+        /* Progress Tracking */
+        .progress-section {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .progress-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .progress-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .progress-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .progress-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                max-width: 95vw;
+                max-height: 95vh;
+            }
+        }
+
+        /* Smooth scrolling and animations */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Add hover effects for resource cards */
-        .resource-card {
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-        .resource-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 15px rgba(0, 255, 128, 0.5);
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        /* Enhance day summary toggles with custom arrow icons */
-        details.day summary {
-            position: relative;
-            padding-left: 24px;
-        }
-        details.day summary::before {
-            content: '\25B6';
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1em;
-            transition: transform 0.3s;
-            color: var(--primary-color);
-        }
-        details.day[open] summary::before {
-            transform: rotate(90deg);
-            color: var(--secondary-color);
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Back-to-top link style */
-        .back-to-top {
-            display: block;
-            margin-top: 40px;
-            text-align: right;
-            color: var(--primary-color);
-            font-weight: 600;
-            text-decoration: none;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
         }
-        @media (max-width: 768px) {
-            nav a {
-                flex: 1 0 100%;
-                border-top: 1px solid #333;
-            }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
         }
     </style>
 </head>
 <body>
-<div id="top"></div>
-<header>
-    <h1>Comprehensive Basketball Conditioning &amp; Skills Program</h1>
-</header>
-<nav>
-    <a href="#introduction">Introduction</a>
-    <a href="#warmup">Warm‑Up &amp; Mobility</a>
-    <a href="#strength">Strength Training</a>
-    <a href="#conditioning">Conditioning &amp; Agility</a>
-    <a href="#skills">Basketball Skills</a>
-    <a href="#schedule">Weekly Schedule</a>
-    <a href="#nutrition">Nutrition</a>
-    <a href="#injury">Injury Prevention</a>
-    <a href="#conclusion">Conclusion</a>
-</nav>
-<div class="container">
-<section id="introduction">
-    <h2>Introduction &amp; Key Principles</h2>
-    <p>After a long layoff, building athletic conditioning and basketball skills requires a phased approach. This program combines strength training, agility work, basketball‑specific practice, and nutrition guidance to restore performance. Start conservatively; allow your body to adapt and increase intensity gradually. Maintain consistency with 5–6 training days per week and integrate at least one rest day for recovery. A thorough warm‑up before every session reduces injury risk by increasing blood flow, flexibility and muscle activation. Focus on progressive overload in strength exercises and interval‑based conditioning to mimic game demands while protecting joints from overuse.</p>
-</section>
-<section id="warmup">
-    <h2>Warm‑Up &amp; Mobility Routine</h2>
-    <p>A proper warm‑up primes your muscles, joints and nervous system. Spend 10–15 minutes at the start of each workout to loosen up and activate stabilisers.</p>
-    <h3>General Warm‑Up</h3>
-    <ul>
-        <li>Light cardio (jogging, skipping or cycling) for 5&nbsp;minutes to raise core temperature and heart rate.</li>
-    </ul>
-    <h3>Dynamic Mobility Drills</h3>
-    <ul>
-        <li>Leg swings (front/back &amp; side‑to‑side), walking lunges with torso twist, high knees, butt kicks and arm circles to mobilise hips, hamstrings, quads and shoulders.</li>
-        <li>Lateral lunges and ankle rocks to improve hip and ankle mobility.</li>
-    </ul>
-    <h3>Activation Exercises</h3>
-    <ul>
-        <li>Glute bridges, monster walks or lateral band walks to activate the gluteus medius.</li>
-        <li>Planks or bird‑dogs for core activation.</li>
-        <li>Ankle resistance band series (inversion, eversion, dorsiflexion &amp; plantarflexion) and calf raises to strengthen ankle stabilisers.</li>
-    </ul>
-    <h3>Neuromuscular Prep</h3>
-    <ul>
-        <li>Short accelerations or defensive slides across the court to ready your nervous system for explosive movements.</li>
-    </ul>
-</section>
-<section id="strength">
-    <h2>Strength Training</h2>
-    <p>Strength workouts rebuild muscle, enhance joint stability and increase power. Perform 2–3 sessions per week, focusing on compound movements with controlled progression.</p>
-    <h3>Major Exercises</h3>
-    <ul>
-        <li><strong>Squats &amp; Lunges:</strong> 3×8–12 squats (bodyweight or loaded) and 2–3×8 lunges each leg. Use a resistance band around the knees to reinforce proper alignment and strengthen the quadriceps.</li>
-        <li><strong>Deadlifts / Hip Hinges:</strong> 3×8–10 Romanian deadlifts for posterior chain strength and knee protection.</li>
-        <li><strong>Calf Raises:</strong> 3×15–20 on a step, emphasising slow eccentric lowering for Achilles tendon resilience.</li>
-        <li><strong>Upper Body Push/Pull:</strong> Push‑ups or bench press (3×8–12), overhead presses (3×8–10), rows or pull‑ups (3×10) to build balanced upper body strength.</li>
-        <li><strong>Core &amp; Stability:</strong> Planks, side planks, Russian twists, leg raises and Pallof presses to develop core stability.</li>
-    </ul>
-    <h3>Knee &amp; Ankle Prehab</h3>
-    <ul>
-        <li><strong>Terminal Knee Extension Squats:</strong> Anchor a band behind the knee; perform partial single‑leg squats reaching forward, sideways and backward. This exercise targets the vastus medialis and improves patellar stability.</li>
-        <li><strong>Balance Drills:</strong> Single‑leg stands (eyes open/closed) and mini‑squats on unstable surfaces to enhance proprioception and ankle stability.</li>
-    </ul>
-    <p>Increase weights or repetitions gradually each week as long as you maintain good form and recovery. Rest 1–2 minutes between sets for compound lifts and 1 minute for smaller movements.</p>
-</section>
-<section id="conditioning">
-    <h2>Conditioning &amp; Agility</h2>
-    <p>Basketball demands repeated bursts of high‑intensity effort. Perform 2–3 conditioning sessions weekly, using intervals and agility drills to develop aerobic base, speed and quickness.</p>
-    <h3>Low‑Impact Cardio</h3>
-    <ul>
-        <li>Start with 15–20 minutes on a bike, elliptical or in the pool if joints are sore; it builds endurance without heavy impact.</li>
-    </ul>
-    <h3>Interval Sprints &amp; Drills</h3>
-    <ul>
-        <li>Shuttle runs (“suicides”) on the half court: sprint to key lines and back in progression; rest 1–2 minutes between sets.</li>
-        <li>Sideline crossings (modified “17s”): continuous sideline‑to‑sideline sprints; build up reps over weeks.</li>
-        <li>Defensive slides: 20‑second lateral shuffles with 40‑second rest to train lateral quickness and leg endurance.</li>
-        <li>Agility ladder patterns and cone drills to improve foot speed and coordination.</li>
-        <li>Jump rope: 5 sets of 1 minute with 30&nbsp;seconds rest; emphasise quick, light bounces.</li>
-    </ul>
-    <h3>Gradual Plyometrics</h3>
-    <ul>
-        <li>Pogo hops, low box jumps and lateral bounds build explosive power. Limit volume and prioritise quality to protect joints.</li>
-    </ul>
-    <p>Progressively increase sprint count or reduce rest as conditioning improves. If joints ache, swap intense sprints for a steady bike or swim session.</p>
-</section>
-<section id="skills">
-    <h2>Basketball Skills Practice</h2>
-    <p>Daily skill work restores muscle memory and game feel. Combine stationary and dynamic drills to sharpen shooting, dribbling and footwork.</p>
-    <h3>Shooting</h3>
-    <ul>
-        <li>Begin with close‑range form shooting (20 makes) focusing on mechanics. Move to mid‑range spots (5 spots × 10 makes each), then add three‑pointers as strength improves.</li>
-        <li>Shoot at least 20 free throws every practice, interspersed throughout workouts to simulate game fatigue.</li>
-        <li>Layups: Practice both left‑ and right‑hand layups (10 each). Progress to continuous layups with full‑court dribble when conditioning allows.</li>
-    </ul>
-    <h3>Dribbling &amp; Ball‑Handling</h3>
-    <ul>
-        <li>Stationary drills: 50 crossovers, 50 between‑the‑legs and 50 behind‑the‑back dribbles; include figure‑8 patterns. Keep eyes up and dribble low.</li>
-        <li>Movement drills: Perform dribble moves on the move (crossover, hesitation, between‑legs) and finish with a pull‑up jumper.</li>
-        <li>Emphasise your weaker hand with single‑hand dribble drills and off‑hand layups.</li>
-    </ul>
-    <h3>Footwork &amp; Agility with Ball</h3>
-    <ul>
-        <li>Practice triple‑threat stance, jab steps and pivoting on each foot to strengthen knee and ankle control.</li>
-        <li>If relevant, work on post moves such as drop‑step and hook shots.</li>
-        <li>Combine ball handling with defensive slides to simulate game situations.</li>
-    </ul>
-    <p>Integrate skills into conditioning by taking shots or doing dribble moves between sprints. Play pick‑up games or scrimmages when your base fitness improves to translate drills into game context.</p>
-</section>
-<section id="schedule">
-    <h2>Weekly Routine Overview</h2>
-    <p>Below is a sample weekly structure. Each day’s plan is expandable; click on the day to view the primary exercises with brief instructions and links to detailed guides. Listen to your body and take an extra rest day when needed. The plan assumes you can train in the morning for 1–2&nbsp;hours.</p>
-
-    <!-- Monday -->
-    <details class="day">
-        <summary>Monday – Strength &amp; Shooting</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Squats:</strong> Perform 3×8–12 controlled squats. Focus on hip, knee and ankle mobility; keep knees tracking over toes and maintain a neutral spine. Strengthens glutes and quads. <a href="https://www.srosm.com/blog/importance-of-a-proper-squat/" target="_blank">Learn more</a>.</li>
-                <li class="exercise-item"><strong>Glute Bridge:</strong> Lie on your back with knees bent and feet flat hip‑width apart. Lift your hips until your torso forms a straight line from shoulders to knees; squeeze glutes and hold briefly, then lower slowly. 3×12–15. <a href="https://www.webmd.com/fitness-exercise/how-to-do-glute-bridge" target="_blank">Learn more</a>.</li>
-                <li class="exercise-item"><strong>Banded Terminal Knee Extension (TKE):</strong> Loop a resistance band around a sturdy post and place the band behind your knee. Step back to create tension, bend the knee slightly, then straighten against the band. Repeat 3×10 per leg. <a href="https://www.menshealth.com/fitness/a44702238/knee-extension-exercises/" target="_blank">Learn more</a>.</li>
-                <li class="exercise-item"><strong>Lateral Band Walk:</strong> Place a mini band above your ankles, stand shoulder‑width apart in a half squat, and take 8–10 side steps in each direction to activate your gluteus medius. Keep hips level and knees bent. <a href="https://www.verywellfit.com/lateral-band-walking-exercise-3120456" target="_blank">Learn more</a>.</li>
-                <li class="exercise-item"><strong>Shooting Practice:</strong> Start with close‑range form shots (20 makes) then move to mid‑range and free throws. Focus on mechanics and finish on a make streak.</li>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-basketball-ball"></i>
+                Elite Training
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#introduction" class="nav-link">Overview</a></li>
+                <li><a href="#warmup" class="nav-link">Warm-Up</a></li>
+                <li><a href="#strength" class="nav-link">Strength</a></li>
+                <li><a href="#conditioning" class="nav-link">Conditioning</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="#nutrition" class="nav-link">Nutrition</a></li>
             </ul>
-        </div>
-    </details>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
 
-    <!-- Tuesday -->
-    <details class="day">
-        <summary>Tuesday – Conditioning &amp; Skills</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Dynamic Warm‑Up:</strong> Spend 10–15 minutes on leg swings, high knees, lateral lunges, ankle mobility drills and arm circles to prepare joints and muscles for activity. <a href="https://jointreplacementcenterscottsdale.com/blog/basketball-warm-up-drills/" target="_blank">Learn more</a>.</li>
-                <li class="exercise-item"><strong>Shuttle Runs:</strong> Perform half‑court “suicide” sprints to each line and back, resting 1–2&nbsp;minutes between 3–5 sets.</li>
-                <li class="exercise-item"><strong>Defensive Slides:</strong> In a low stance, shuffle laterally across the court for 20&nbsp;seconds; rest for 40&nbsp;seconds and repeat 5–6 times.</li>
-                <li class="exercise-item"><strong>Jump Rope:</strong> 5×1‑minute sets with 30&nbsp;seconds rest to build calf strength and coordination.</li>
-                <li class="exercise-item"><strong>Ball‑Handling:</strong> Practise stationary dribbles (crossovers, between‑the‑legs, behind‑the‑back) and then perform dribble‑drive moves while fatigued.</li>
-            </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Elite Basketball Training Program</h1>
+            <p class="hero-subtitle">
+                Comprehensive conditioning and skills development designed to rebuild your athletic foundation after a layoff
+            </p>
+            <a href="#introduction" class="cta-button">
+                <i class="fas fa-play"></i>
+                Start Your Journey
+            </a>
         </div>
-    </details>
+    </section>
 
-    <!-- Wednesday -->
-    <details class="day">
-        <summary>Wednesday – Strength &amp; Skills</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Deadlifts / Hip Hinges:</strong> 3×8–10 Romanian deadlifts to strengthen your hamstrings and glutes while keeping a neutral spine.</li>
-                <li class="exercise-item"><strong>Lunges:</strong> 2–3×8 forward and lateral lunges per leg. Keep front knee over toes and torso upright.</li>
-                <li class="exercise-item"><strong>Upper Body Strength:</strong> Push‑ups or bench press (3×8–12) paired with rows or pull‑ups (3×10) to balance pushing and pulling muscles.</li>
-                <li class="exercise-item"><strong>Core Work:</strong> Planks, side planks and Russian twists for 3×30&nbsp;seconds each.</li>
-                <li class="exercise-item"><strong>Shooting &amp; Post Moves:</strong> Mix mid‑range shots with three‑pointers and practise basic post moves (drop‑step, hook shot) if applicable.</li>
-            </ul>
-        </div>
-    </details>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Introduction Section -->
+        <section id="introduction" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Program Overview</h2>
+                    <p class="section-subtitle">
+                        A scientifically-designed approach to rebuild your basketball performance through progressive conditioning and skill development
+                    </p>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <h3 class="card-title">Phased Approach</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Start conservatively and build intensity gradually. Our program combines strength training, agility work, and basketball-specific practice to restore peak performance safely.</p>
+                        </div>
+                    </div>
 
-    <!-- Thursday -->
-    <details class="day">
-        <summary>Thursday – Conditioning &amp; Recovery</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Low‑Impact Cardio:</strong> 15–20&nbsp;minutes on a bike, elliptical or in the pool to build endurance while reducing stress on knees and ankles.</li>
-                <li class="exercise-item"><strong>Agility Ladder &amp; Cone Drills:</strong> Work through quick‑feet patterns and change‑of‑direction drills for 15–20&nbsp;minutes.</li>
-                <li class="exercise-item"><strong>Light Dribbling/Shooting:</strong> Spend 20&nbsp;minutes on free throws or simple ball‑handling to maintain touch without taxing your body.</li>
-                <li class="exercise-item"><strong>Mobility &amp; Stretching:</strong> Finish with foam rolling and static stretches for calves, hamstrings, quads and hip flexors.</li>
-            </ul>
-        </div>
-    </details>
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h3 class="card-title">Consistent Schedule</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Maintain consistency with 5-6 training days per week, integrating at least one rest day for optimal recovery and adaptation.</p>
+                        </div>
+                    </div>
 
-    <!-- Friday -->
-    <details class="day">
-        <summary>Friday – Strength &amp; Advanced Skills</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Full‑Body Strength:</strong> Repeat Monday’s strength circuit, increasing weight or reps as tolerated. Include calf raises (3×20) with slow eccentric lowering.</li>
-                <li class="exercise-item"><strong>Core Finisher:</strong> Add Pallof presses or bird‑dogs for anti‑rotation stability.</li>
-                <li class="exercise-item"><strong>Explosive Drills:</strong> Introduce low‑volume plyometrics like pogo hops or low box jumps (2–3×5).</li>
-                <li class="exercise-item"><strong>Skill Focus:</strong> Work on jab‑steps, rip‑through moves and pull‑up jumpers off the dribble.</li>
-            </ul>
-        </div>
-    </details>
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="card-title">Injury Prevention</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Thorough warm-ups and progressive overload reduce injury risk while protecting joints from overuse during your comeback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Saturday -->
-    <details class="day">
-        <summary>Saturday – Basketball Day</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Extended On‑Court Session:</strong> Spend 90‑120&nbsp;minutes combining shooting drills (100+ shots), dribbling, footwork and scrimmage or 1‑on‑1 play to apply skills under realistic conditions.</li>
-                <li class="exercise-item"><strong>Jump Rope &amp; Plyometrics:</strong> If feeling strong, include jump rope intervals and a few sets of low box jumps or lateral bounds.</li>
-                <li class="exercise-item"><strong>Cool‑Down:</strong> Finish with stretching and gentle mobility work.</li>
-            </ul>
-        </div>
-    </details>
+        <!-- Warm-up Section -->
+        <section id="warmup" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Warm-Up & Mobility</h2>
+                    <p class="section-subtitle">Prime your muscles, joints, and nervous system with our comprehensive 15-minute routine</p>
+                </div>
 
-    <!-- Sunday -->
-    <details class="day">
-        <summary>Sunday – Rest &amp; Recovery</summary>
-        <div class="panel">
-            <ul>
-                <li class="exercise-item"><strong>Active Recovery:</strong> Enjoy a leisurely walk, gentle yoga or light cycling to promote blood flow.</li>
-                <li class="exercise-item"><strong>Mobility &amp; Stretching:</strong> Spend 20–30&nbsp;minutes on flexibility training and foam rolling.</li>
-                <li class="exercise-item"><strong>Sleep &amp; Hydration:</strong> Aim for at least 8&nbsp;hours of sleep and maintain hydration. Prepare meals for the upcoming week.</li>
-            </ul>
-        </div>
-    </details>
-</section>
-<section id="nutrition">
-    <h2>Nutrition Guidelines (Vegetarian)</h2>
-    <p>Proper fueling supports training, muscle growth and recovery. Aim for a balanced diet rich in quality proteins, carbohydrates and healthy fats, adjusted to your energy needs.</p>
-    <h3>Macronutrients</h3>
-    <ul>
-        <li><strong>Protein:</strong> Consume 1.2–2.0&nbsp;g/kg body weight per day, distributed evenly across meals. Include sources like milk, yogurt, paneer, tofu, lentils, beans, chickpeas, nuts and seeds.</li>
-        <li><strong>Carbohydrates:</strong> For moderate training load aim for 5–7&nbsp;g/kg/day to replenish glycogen. Choose whole grains, rice, oats, fruits and starchy vegetables; use easily digestible carbs (e.g. banana) before workouts.</li>
-        <li><strong>Fats:</strong> 20–30% of calories from healthy fats such as nuts, seeds, avocados and olive oil; avoid heavy fatty meals immediately before training.</li>
-    </ul>
-    <h3>Nutrient Timing &amp; Hydration</h3>
-    <ul>
-        <li>Have a balanced pre‑workout snack (fruit and nuts or yogurt) and a post‑workout meal containing ~0.25&nbsp;g/kg of fast‑absorbing protein (e.g. whey) plus carbohydrates to stimulate recovery.</li>
-        <li>Eat 4–6 small meals per day to meet calorie and protein needs without feeling overly full.</li>
-        <li>Drink at least 2.5–3&nbsp;L of fluids daily; increase on hard training days and include electrolytes to replace sweat losses.</li>
-    </ul>
-    <h3>Micronutrients &amp; Supplements</h3>
-    <ul>
-        <li>Ensure adequate iron by consuming legumes, leafy greens and fortified cereals; pair with vitamin&nbsp;C rich foods to enhance absorption.</li>
-        <li>Maintain calcium and vitamin&nbsp;D intake via dairy or fortified plant milk; consider a vitamin&nbsp;D supplement if sun exposure is limited.</li>
-        <li>Vitamin&nbsp;B12 is found in dairy but may require supplementation for vegetarians.</li>
-        <li>Optional: creatine monohydrate (5&nbsp;g/day) can aid high‑intensity performance, especially for vegetarians.</li>
-    </ul>
-</section>
-<section id="injury">
-    <h2>Injury Prevention &amp; Recovery</h2>
-    <p>Given your history of ankle sprains and knee pain, prioritise joint care. Consistently do the prehab exercises described, wear supportive shoes and consider bracing or taping during high‑intensity games. After workouts, cool down with stretching and foam rolling to maintain flexibility and reduce tension.</p>
-    <ul>
-        <li><strong>Ankle care:</strong> Perform band exercises (inversion/eversion, etc.), calf raises and balance drills. Ice ankles if tender and wear supportive footwear on the concrete court.</li>
-        <li><strong>Knee care:</strong> Reinforce quadriceps and glutes with TKE squats and hip abductor work. Practise soft landings and avoid excessive jumping volume, especially on hard surfaces.</li>
-        <li><strong>Rest &amp; Recovery:</strong> Listen to your body – take a rest day when pain or fatigue is high. Use ice, compression, elevation and gentle activity (e.g. cycling) to manage soreness. Aim for at least 8&nbsp;hours of sleep to maximise recovery.</li>
-    </ul>
-</section>
-<section id="conclusion">
-    <h2>Conclusion</h2>
-    <p>This program integrates every aspect needed to rebuild your athletic base: dynamic warm‑ups for joint safety, strength training for power and stability, conditioning for game‑like stamina, detailed skill work and nutrition to support growth. Track your progress and adjust as you become fitter – gradually add weight, increase drill volume or reduce rest. Patience and consistency are vital; with dedication you will regain agility, strength and on‑court performance while staying injury‑free.</p>
-</section>
-<!-- Resources section providing external references and previews -->
-<section id="resources">
-    <h2>Learn More &amp; References</h2>
-    <p>These articles and guides provide in‑depth explanations of the exercises and principles used in this program. Explore them to refine your technique and deepen your understanding. Each link opens in a new tab.</p>
-    <div class="resources">
-        <div class="resource-card">
-            <h4>Basketball Warm‑Up Drills</h4>
-            <p>A joint specialist outlines why proper warm‑ups should gradually increase in intensity and include dynamic leg swings, high knees, lateral lunges, ankle mobility drills and arm circles to prepare weight‑bearing joints for play while reducing injury risk.</p>
-            <a href="https://jointreplacementcenterscottsdale.com/blog/basketball-warm-up-drills/" target="_blank">Visit Source</a>
-        </div>
-        <div class="resource-card">
-            <h4>Glute Bridge Technique</h4>
-            <p>A step‑by‑step guide explains how to perform the glute bridge: lie on your back with knees bent and feet flat, lift hips until your torso forms a straight line from shoulders to knees, squeeze your glutes and lower under control.</p>
-            <a href="https://www.webmd.com/fitness-exercise/how-to-do-glute-bridge" target="_blank">Visit Source</a>
-        </div>
-        <div class="resource-card">
-            <h4>Lateral Band Walk</h4>
-            <p>This article describes the lateral band walk, highlighting how placing a resistance band above the ankles, assuming a half‑squat stance and taking side steps strengthens the gluteus medius and improves hip and knee stability.</p>
-            <a href="https://www.verywellfit.com/lateral-band-walking-exercise-3120456" target="_blank">Visit Source</a>
-        </div>
-        <div class="resource-card">
-            <h4>Banded Terminal Knee Extension</h4>
-            <p>A physical therapist demonstrates how to strengthen the quadriceps and improve knee stability by looping a band behind the knee, stepping back to create tension and straightening the leg against resistance.</p>
-            <a href="https://www.menshealth.com/fitness/a44702238/knee-extension-exercises/" target="_blank">Visit Source</a>
-        </div>
-        <div class="resource-card">
-            <h4>Proper Squat Mobility &amp; Strength</h4>
-            <p>This article emphasises that a correct squat requires adequate hip (≈42°), knee (≈70°) and ankle (≈28°) mobility and strong glute and quadriceps muscles; it recommends stretching hamstrings, calves and performing glute bridges to improve mobility and strength.</p>
-            <a href="https://www.srosm.com/blog/importance-of-a-proper-squat/" target="_blank">Visit Source</a>
-        </div>
-        <div class="resource-card">
-            <h4>Dark Theme with Neon Design Inspiration</h4>
-            <p>A web design guide highlights a template distinguished by its dark theme and striking neon hues, noting that such colour choices and captivating typefaces improve visibility and make gym websites stand out.</p>
-            <a href="https://mycodelesswebsite.com/gym-website-templates/" target="_blank">Visit Source</a>
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="collapsible-title">
+                            <i class="fas fa-heart-pulse"></i>
+                            General Warm-Up
+                        </div>
+                        <i class="fas fa-chevron-down collapsible-icon"></i>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-running"></i>
+                                        Light Cardio
+                                    </div>
+                                    <div class="exercise-description">
+                                        5 minutes of light jogging, skipping, or cycling to raise core temperature and heart rate, preparing your cardiovascular system for intense activity.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="collapsible-title">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            Dynamic Mobility Drills
+                        </div>
+                        <i class="fas fa-chevron-down collapsible-icon"></i>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                        Leg Swings & Walking Lunges
+                                    </div>
+                                    <div class="exercise-description">
+                                        Leg swings (front/back & side-to-side), walking lunges with torso twist, high knees, butt kicks and arm circles to mobilize hips, hamstrings, quads and shoulders.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-step-forward"></i>
+                                        Lateral Movements
+                                    </div>
+                                    <div class="exercise-description">
+                                        Lateral lunges and ankle rocks to improve hip and ankle mobility, essential for basketball's multi-directional movements.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapsible">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <div class="collapsible-title">
+                            <i class="fas fa-bolt"></i>
+                            Activation & Neuromuscular Prep
+                        </div>
+                        <i class="fas fa-chevron-down collapsible-icon"></i>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="collapsible-inner">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-fire"></i>
+                                        Glute Activation
+                                    </div>
+                                    <div class="exercise-description">
+                                        Glute bridges, monster walks, or lateral band walks to activate the gluteus medius and prepare your posterior chain.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-compress"></i>
+                                        Core Activation
+                                    </div>
+                                    <div class="exercise-description">
+                                        Planks or bird-dogs for core activation, creating a stable foundation for all basketball movements.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-running"></i>
+                                        Movement Prep
+                                    </div>
+                                    <div class="exercise-description">
+                                        Short accelerations or defensive slides across the court to ready your nervous system for explosive movements.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Weekly Training Schedule</h2>
+                    <p class="section-subtitle">A comprehensive 7-day program balancing strength, conditioning, skills, and recovery</p>
+                </div>
+
+                <div class="schedule-grid">
+                    <!-- Monday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-dumbbell"></i> Monday - Strength & Shooting</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-square"></i>
+                                        Squats (3×8-12)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Controlled squats focusing on hip, knee and ankle mobility. Keep knees tracking over toes and maintain neutral spine.
+                                    </div>
+                                    <a href="#" class="exercise-link" onclick="showPreview('Proper Squat Technique', 'This article emphasizes that a correct squat requires adequate hip (≈42°), knee (≈70°) and ankle (≈28°) mobility and strong glute and quadriceps muscles. It recommends stretching hamstrings, calves and performing glute bridges to improve mobility and strength.', 'https://www.srosm.com/blog/importance-of-a-proper-squat/')">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Learn Technique
+                                    </a>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-bridge"></i>
+                                        Glute Bridges (3×12-15)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Lift hips until torso forms straight line from shoulders to knees. Squeeze glutes and hold briefly.
+                                    </div>
+                                    <a href="#" class="exercise-link" onclick="showPreview('Glute Bridge Technique', 'Step-by-step guide: lie on your back with knees bent and feet flat, lift hips until your torso forms a straight line from shoulders to knees, squeeze your glutes and lower under control.', 'https://www.webmd.com/fitness-exercise/how-to-do-glute-bridge')">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Learn Technique
+                                    </a>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-band-aid"></i>
+                                        Terminal Knee Extension (3×10 each leg)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Loop resistance band behind knee, step back for tension, bend knee slightly then straighten against band.
+                                    </div>
+                                    <a href="#" class="exercise-link" onclick="showPreview('Terminal Knee Extension', 'Physical therapist demonstrates strengthening quadriceps and improving knee stability by looping a band behind the knee, stepping back to create tension and straightening the leg against resistance.', 'https://www.menshealth.com/fitness/a44702238/knee-extension-exercises/')">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Learn Technique
+                                    </a>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-basketball-ball"></i>
+                                        Shooting Practice
+                                    </div>
+                                    <div class="exercise-description">
+                                        Start with close-range form shots (20 makes), progress to mid-range and free throws. Focus on mechanics.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tuesday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-running"></i> Tuesday - Conditioning & Skills</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-fire"></i>
+                                        Dynamic Warm-Up (10-15 min)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Leg swings, high knees, lateral lunges, ankle mobility drills and arm circles to prepare joints and muscles.
+                                    </div>
+                                    <a href="#" class="exercise-link" onclick="showPreview('Basketball Warm-Up Drills', 'Joint specialist outlines why proper warm-ups should gradually increase in intensity and include dynamic leg swings, high knees, lateral lunges, ankle mobility drills and arm circles to prepare weight-bearing joints for play while reducing injury risk.', 'https://jointreplacementcenterscottsdale.com/blog/basketball-warm-up-drills/')">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Learn More
+                                    </a>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        Shuttle Runs (3-5 sets)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Half-court "suicide" sprints to each line and back, rest 1-2 minutes between sets.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                        Defensive Slides (5-6 sets)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Low stance lateral shuffles across court for 20 seconds, rest 40 seconds between sets.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-basketball-ball"></i>
+                                        Ball-Handling Practice
+                                    </div>
+                                    <div class="exercise-description">
+                                        Stationary dribbles (crossovers, between-legs, behind-back) then dribble-drive moves while fatigued.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Wednesday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-dumbbell"></i> Wednesday - Strength & Skills</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        Romanian Deadlifts (3×8-10)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Strengthen hamstrings and glutes while maintaining neutral spine throughout movement.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-step-forward"></i>
+                                        Lunges (2-3×8 each leg)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Forward and lateral lunges keeping front knee over toes and torso upright.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-hand-rock"></i>
+                                        Upper Body Strength
+                                    </div>
+                                    <div class="exercise-description">
+                                        Push-ups or bench press (3×8-12) paired with rows or pull-ups (3×10) for balanced development.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-basketball-ball"></i>
+                                        Shooting & Post Moves
+                                    </div>
+                                    <div class="exercise-description">
+                                        Mix mid-range shots with three-pointers, practice basic post moves (drop-step, hook shot).
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Thursday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-heart"></i> Thursday - Conditioning & Recovery</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-bicycle"></i>
+                                        Low-Impact Cardio (15-20 min)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Bike, elliptical, or pool work to build endurance while reducing stress on knees and ankles.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-route"></i>
+                                        Agility Ladder & Cone Drills
+                                    </div>
+                                    <div class="exercise-description">
+                                        Quick-feet patterns and change-of-direction drills for 15-20 minutes.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-spa"></i>
+                                        Mobility & Stretching
+                                    </div>
+                                    <div class="exercise-description">
+                                        Foam rolling and static stretches for calves, hamstrings, quads and hip flexors.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Friday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-bolt"></i> Friday - Strength & Advanced Skills</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-dumbbell"></i>
+                                        Full-Body Strength Circuit
+                                    </div>
+                                    <div class="exercise-description">
+                                        Repeat Monday's strength routine, increasing weight or reps. Include calf raises (3×20) with slow eccentric lowering.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-rocket"></i>
+                                        Explosive Drills
+                                    </div>
+                                    <div class="exercise-description">
+                                        Low-volume plyometrics like pogo hops or low box jumps (2-3×5).
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-basketball-ball"></i>
+                                        Advanced Skills
+                                    </div>
+                                    <div class="exercise-description">
+                                        Jab-steps, rip-through moves, and pull-up jumpers off the dribble.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Saturday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-basketball-ball"></i> Saturday - Basketball Day</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-clock"></i>
+                                        Extended Court Session (90-120 min)
+                                    </div>
+                                    <div class="exercise-description">
+                                        Combine shooting drills (100+ shots), dribbling, footwork and scrimmage for realistic game application.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-rocket"></i>
+                                        Jump Rope & Plyometrics
+                                    </div>
+                                    <div class="exercise-description">
+                                        If feeling strong, include jump rope intervals and low box jumps or lateral bounds.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sunday -->
+                    <div class="day-card">
+                        <div class="day-header" onclick="toggleDay(this)">
+                            <span><i class="fas fa-bed"></i> Sunday - Rest & Recovery</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="day-content">
+                            <ul class="exercise-list">
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-walking"></i>
+                                        Active Recovery
+                                    </div>
+                                    <div class="exercise-description">
+                                        Leisurely walk, gentle yoga, or light cycling to promote blood flow.
+                                    </div>
+                                </li>
+                                <li class="exercise-item">
+                                    <div class="exercise-name">
+                                        <i class="fas fa-bed"></i>
+                                        Sleep & Hydration
+                                    </div>
+                                    <div class="exercise-description">
+                                        Aim for 8+ hours of sleep, maintain hydration, and prepare meals for the upcoming week.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nutrition Section -->
+        <section id="nutrition" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nutrition Guidelines</h2>
+                    <p class="section-subtitle">Vegetarian-focused nutrition to fuel your training, muscle growth, and recovery</p>
+                </div>
+
+                <div class="content-grid">
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-drumstick-bite"></i>
+                            </div>
+                            <h3 class="card-title">Protein (1.2-2.0g/kg/day)</h3>
+                        </div>
+                        <div class="card-content">
+                            <p><strong>Sources:</strong> Milk, yogurt, paneer, tofu, lentils, beans, chickpeas, nuts, and seeds. Distribute evenly across meals for optimal muscle protein synthesis.</p>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="card-title">Carbohydrates (5-7g/kg/day)</h3>
+                        </div>
+                        <div class="card-content">
+                            <p><strong>Sources:</strong> Whole grains, rice, oats, fruits, and starchy vegetables. Use easily digestible carbs (banana) before workouts for quick energy.</p>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h3 class="card-title">Hydration & Timing</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Drink 2.5-3L daily, increase on training days. Post-workout: ~0.25g/kg fast-absorbing protein plus carbohydrates within 30 minutes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <h3 class="progress-title">Key Micronutrients for Vegetarians</h3>
+                    </div>
+                    <div class="progress-grid">
+                        <div class="progress-card">
+                            <div class="progress-value">Iron</div>
+                            <div class="progress-label">Legumes, leafy greens, fortified cereals + Vitamin C</div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-value">B12</div>
+                            <div class="progress-label">Dairy products or supplementation</div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-value">Calcium</div>
+                            <div class="progress-label">Dairy or fortified plant milk</div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-value">Creatine</div>
+                            <div class="progress-label">5g/day supplement (optional)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Expert Resources & References</h2>
+                    <p class="section-subtitle">In-depth guides and research to enhance your understanding and technique</p>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-card fade-in">
+                        <h4 class="resource-title">Basketball Warm-Up Drills</h4>
+                        <p class="resource-description">
+                            Joint specialist outlines why proper warm-ups should gradually increase in intensity and include dynamic movements to prepare weight-bearing joints while reducing injury risk.
+                        </p>
+                        <div class="resource-actions">
+                            <button class="btn btn-secondary" onclick="showPreview('Basketball Warm-Up Drills', 'A joint specialist outlines why proper warm-ups should gradually increase in intensity and include dynamic leg swings, high knees, lateral lunges, ankle mobility drills and arm circles to prepare weight-bearing joints for play while reducing injury risk.', 'https://jointreplacementcenterscottsdale.com/blog/basketball-warm-up-drills/')">
+                                <i class="fas fa-eye"></i>
+                                Preview
+                            </button>
+                            <a href="https://jointreplacementcenterscottsdale.com/blog/basketball-warm-up-drills/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card fade-in">
+                        <h4 class="resource-title">Glute Bridge Technique</h4>
+                        <p class="resource-description">
+                            Comprehensive guide explaining proper glute bridge form: positioning, execution, and common mistakes to avoid for maximum glute activation.
+                        </p>
+                        <div class="resource-actions">
+                            <button class="btn btn-secondary" onclick="showPreview('Glute Bridge Technique', 'A step-by-step guide explains how to perform the glute bridge: lie on your back with knees bent and feet flat, lift hips until your torso forms a straight line from shoulders to knees, squeeze your glutes and lower under control.', 'https://www.webmd.com/fitness-exercise/how-to-do-glute-bridge')">
+                                <i class="fas fa-eye"></i>
+                                Preview
+                            </button>
+                            <a href="https://www.webmd.com/fitness-exercise/how-to-do-glute-bridge" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card fade-in">
+                        <h4 class="resource-title">Lateral Band Walk Exercise</h4>
+                        <p class="resource-description">
+                            Detailed breakdown of the lateral band walk, highlighting how resistance band placement and proper stance strengthen the gluteus medius for improved hip stability.
+                        </p>
+                        <div class="resource-actions">
+                            <button class="btn btn-secondary" onclick="showPreview('Lateral Band Walk', 'This article describes the lateral band walk, highlighting how placing a resistance band above the ankles, assuming a half-squat stance and taking side steps strengthens the gluteus medius and improves hip and knee stability.', 'https://www.verywellfit.com/lateral-band-walking-exercise-3120456')">
+                                <i class="fas fa-eye"></i>
+                                Preview
+                            </button>
+                            <a href="https://www.verywellfit.com/lateral-band-walking-exercise-3120456" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card fade-in">
+                        <h4 class="resource-title">Terminal Knee Extension</h4>
+                        <p class="resource-description">
+                            Physical therapist demonstrates how to strengthen the quadriceps and improve knee stability using resistance band terminal knee extension exercises.
+                        </p>
+                        <div class="resource-actions">
+                            <button class="btn btn-secondary" onclick="showPreview('Terminal Knee Extension', 'A physical therapist demonstrates how to strengthen the quadriceps and improve knee stability by looping a band behind the knee, stepping back to create tension and straightening the leg against resistance.', 'https://www.menshealth.com/fitness/a44702238/knee-extension-exercises/')">
+                                <i class="fas fa-eye"></i>
+                                Preview
+                            </button>
+                            <a href="https://www.menshealth.com/fitness/a44702238/knee-extension-exercises/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card fade-in">
+                        <h4 class="resource-title">Proper Squat Mobility</h4>
+                        <p class="resource-description">
+                            Comprehensive analysis of squat mechanics, required mobility angles for hips, knees, and ankles, plus corrective exercises for common limitations.
+                        </p>
+                        <div class="resource-actions">
+                            <button class="btn btn-secondary" onclick="showPreview('Proper Squat Technique', 'This article emphasizes that a correct squat requires adequate hip (≈42°), knee (≈70°) and ankle (≈28°) mobility and strong glute and quadriceps muscles; it recommends stretching hamstrings, calves and performing glute bridges to improve mobility and strength.', 'https://www.srosm.com/blog/importance-of-a-proper-squat/')">
+                                <i class="fas fa-eye"></i>
+                                Preview
+                            </button>
+                            <a href="https://www.srosm.com/blog/importance-of-a-proper-squat/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card fade-in">
+                        <h4 class="resource-title">Modern Fitness Design</h4>
+                        <p class="resource-description">
+                            Web design guide showcasing dark themes with neon accents, modern typography, and visual elements that enhance user engagement in fitness applications.
+                        </p>
+                        <div class="resource-actions">
+                            <button class="btn btn-secondary" onclick="showPreview('Modern Fitness Design', 'A web design guide highlights a template distinguished by its dark theme and striking neon hues, noting that such color choices and captivating typefaces improve visibility and make gym websites stand out.', 'https://mycodelesswebsite.com/gym-website-templates/')">
+                                <i class="fas fa-eye"></i>
+                                Preview
+                            </button>
+                            <a href="https://mycodelesswebsite.com/gym-website-templates/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visit Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Resource Preview</h3>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalDescription"></p>
+                <div style="margin-top: 1.5rem;">
+                    <a id="modalLink" href="#" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Visit Full Article
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</section>
 
-    <!-- Back to top link -->
-    <a href="#top" class="back-to-top">Back to top ↑</a>
-</div>
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active link
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Collapsible sections
+        function toggleCollapsible(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.collapsible-icon');
+            
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        }
+
+        // Day schedule toggle
+        function toggleDay(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('i:last-child');
+            
+            // Close all other day contents
+            document.querySelectorAll('.day-content').forEach(dc => {
+                if (dc !== content) {
+                    dc.classList.remove('active');
+                    dc.previousElementSibling.querySelector('i:last-child').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current content
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Preview modal functionality
+        function showPreview(title, description, link) {
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalLink = document.getElementById('modalLink');
+            
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalLink.href = link;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('previewModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('previewModal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active navigation link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile menu toggle (for future implementation)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        });
+
+        // Keyboard accessibility for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
